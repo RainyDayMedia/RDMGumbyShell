@@ -10,7 +10,7 @@
  *
  * @param $position (int) menu position for the separator
  */
-function create_admin_menu_separator( $position )
+function rdmgumby_admin_menu_separator( $position )
 {
 	global $menu;
 
