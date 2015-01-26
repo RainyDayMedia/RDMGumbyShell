@@ -110,3 +110,8 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default', ['lint', 'styles', 'vendors', 'scripts', 'browser-sync', 'watch']);
+
+// run some setup tasks. only called if user runs gulp setup
+gulp.task('setup', function() {
+    return $.bower();
+});
