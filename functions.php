@@ -96,34 +96,42 @@ function rdmgumby_widgets_init()
 	 * This includes the free version (4.3.9) of ACF and is included with this theme
 	 * Comment this out if you are using ACF Pro
 	 */
-	include_once(get_template_directory() . '/inc/advanced-custom-fields/acf.php' );
+	include_once( get_template_directory() . '/inc/advanced-custom-fields/acf.php' );
 
 	/**
 	 * This includes ACF Pro, but you must install into ./inc/ yourself
 	 * If using ACF Pro, simply uncomment all of the following code
 	 */
 	/*
-	add_filter('acf/settings/path', 'acfSettingsPath');
+	add_filter( 'acf/settings/path', 'acfSettingsPath' );
 	function acfSettingsPath( $path )
 	{
 	    $path = get_template_directory() . '/inc/advanced-custom-fields-pro/';
 	    return $path;
 	}
 
-	add_filter('acf/settings/dir', 'acfSettingsDir');
+	add_filter( 'acf/settings/dir', 'acfSettingsDir' );
 	function acfSettingsDir( $dir )
 	{
 	    $dir = get_template_directory_uri() . '/inc/advanced-custom-fields-pro/';
 	    return $dir;
 	}
 
-	include_once(get_template_directory() . '/inc/advanced-custom-fields-pro/acf.php' );
+	include_once( get_template_directory() . '/inc/advanced-custom-fields-pro/acf.php' );
 	*/
+
+/**
+ * RICG Responsive Images plugin v2.0.2
+ * It seems like this will change in the future to become part of the WordPress core,
+ * at which point this will be redundant.
+ * You can take this out by commenting out the include.
+ */
+include_once( get_template_direcotry() . '/inc/ricg-responsive-images/wp-tevko-responsive-images.php' );
 
 /**
  * Enqueue scripts and styles
  *
- * Note that we are enqueue minified versions of all of these files. If you are not
+ * Note that we enqueue minified versions of all of these files. If you are not
  * using minified files, you may want to modify the enqueues here. Or more likely,
  * you'll want to start using minified files.
  *
