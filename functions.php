@@ -126,7 +126,7 @@ function rdmgumby_widgets_init()
  * at which point this will be redundant.
  * You can take this out by commenting out the include.
  */
-include_once( get_template_direcotry() . '/inc/ricg-responsive-images/wp-tevko-responsive-images.php' );
+include_once( get_template_directory() . '/inc/ricg-responsive-images/wp-tevko-responsive-images.php' );
 
 /**
  * Enqueue scripts and styles
