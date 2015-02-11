@@ -85,7 +85,7 @@ function rdmgumby_widgets_init()
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>'
-		);)
+		));
 }
 
 /**
