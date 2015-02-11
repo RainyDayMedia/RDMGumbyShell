@@ -20,7 +20,8 @@ defined('ABSPATH') or die("No script kiddies please!");
 
 // First we queue the polyfill
 function tevkori_get_picturefill() {
-	wp_enqueue_script( 'picturefill', plugins_url( 'js/picturefill.js', __FILE__ ), array(), '2.2.0', true );
+	//wp_enqueue_script( 'picturefill', plugins_url( 'js/picturefill.js', __FILE__ ), array(), '2.2.0', true );
+	wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/inc/ricg-responsive-images/js/picturefill.js', array(), '2.2.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'tevkori_get_picturefill' );
 
