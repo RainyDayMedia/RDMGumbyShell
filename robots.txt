@@ -1,8 +1,46 @@
+# RDMShell Wordpress RobotsTXT
 User-agent: *
-Disallow: /wp-login.php
+Allow:/
+
+# Disallow these directories, url types & files-types for all BOTS
+Disallow: /cgi-bin/
 Disallow: /wp-admin/
-Disallow: /wp-content/plugins/ # prevents backlinks in plugin folders
 Disallow: /wp-includes/
-Disallow: /search/ # prevents search queries being indexed
+Disallow: /wp-content/upgrade/
+Disallow: /wp-content/plugins/ # prevents backlinks in plugin folders
+Disallow: /search/*/feed
+Disallow: /search/*/*
+Disallow: /readme.html
+Disallow: /license.txt
 Disallow: /*?s
-Disallow: /wp-content/updates/ # prevents updates directory from being indexed
+Disallow: /*?
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /*.gz$
+Disallow: /*.wmv$
+Disallow: /*.cgi$
+Disallow: /*.xhtml$
+Allow: /wp-content/uploads/
+Allow: /*?page=*
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Adsbot-Google
+Allow: /
+
+Users-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: ia_archiver*
+Disallow: /
+
+User-agent: duggmirror
+Disallow: /
+
+Sitemap: http://your_domain_goes_here.com/sitemap.xml
