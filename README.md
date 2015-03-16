@@ -1,5 +1,7 @@
 # RDMGumbyShell
 
+[![Join the chat at https://gitter.im/RainyDayMedia/RDMGumbyShell](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RainyDayMedia/RDMGumbyShell?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Its a WordPress theme based on the [Gumby Framework](http://gumbyframework.com/), and gets a lot of it's structure from [_s](http://underscores.me/)! Installing this will give you a quick start on a theme, and includes several basic templates. But it is essentially a blank theme that's mean for hacking and customizing. Also includes our typical gulpfile for improving the workflow. But don't think you have to use Gulp. We like it. We use it. But you do whatever you like.
 
 Happy Coding!
