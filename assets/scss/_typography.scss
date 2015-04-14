@@ -1,2 +1,109 @@
 /* =Typography
 ----------------------------------------------- */
+// color definitions
+.black {
+    color: $black !important;
+}
+
+.typography-light {
+    color: $font-color;
+
+    a {
+        color: $link-color;
+    }
+
+    a:hover {
+        color: $link-hover-color;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $header-font-color;
+    }
+}
+
+.typography-dark {
+    color: $font-color-alt;
+
+    a {
+        color: $link-color-alt;
+    }
+
+    a:hover {
+        color: $link-hover-color-alt;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $header-font-color-alt;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
+    color: inherit;
+}
+
+h1 {
+    @include font-size(60px);
+}
+
+h2 {
+    // 48px
+    @include font-size($xxlarge);
+}
+
+h3 {
+    @include font-size(36px);
+}
+
+h4 {
+    // 30px
+    @include font-size($larger);
+}
+
+h5 {
+    @include font-size(24px);
+}
+
+h6 {
+    // 18px
+    @include font-size($med);
+}
+
+p {
+    &.no-margin {
+        margin-bottom: 0;
+    }
+
+    &.bold {
+        font-weight: $font-weight-semibold;
+    }
+}
+
+.xbold {
+    font-weight: $font-weight-xbold;
+}
+
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+.semibold {
+    font-weight: $font-weight-semibold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+p.small,
+.small p {
+    @include font-size(14px);
+}
