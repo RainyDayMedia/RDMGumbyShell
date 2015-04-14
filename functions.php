@@ -169,3 +169,15 @@ function theme_enqueue_scripts() {
 	// Add support for including <p> tags in the excerpts
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'rdmgumby_trim_excerpt' );
+
+    // Sets up the theme color
+    // this is used as the ms tile background color and the chrome toolbar color
+    global $favicon_theme_color;
+    $favicon_theme_color = '#ffffff';
+    // Adds generated favicons to theme from end and backend
+    // http://realfavicongenerator.net/
+    add_action( 'wp_head', 'rdmgumby_output_favicons' );
+    add_action( 'admin_head', 'rdmgumby_output_favicons' );
+    add_action( 'login_head', 'rdmgumby_output_favicons' );
+
+
