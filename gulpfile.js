@@ -46,7 +46,11 @@ gulp.task('lint', function() {
 });*/
 gulp.task('styles', function() {
     return gulp.src('assets/scss/*.scss')
-        .pipe($.plumber())
+        .pipe($.plumber({
+            errorHandler: function (error) {
+                this.emit('end');
+            }
+        }))
         .pipe($.compass({
             css: '.',
             sass: 'assets/scss',
