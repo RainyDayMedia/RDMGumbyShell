@@ -121,7 +121,7 @@ function rdmgumby_widgets_init()
 	*/
 
 /**
- * RICG Responsive Images plugin v2.0.2
+ * RICG Responsive Images plugin v2.1.1
  * It seems like this will change in the future to become part of the WordPress core,
  * at which point this will be redundant.
  * You can take this out by commenting out the include.
@@ -146,7 +146,7 @@ function theme_enqueue_scripts() {
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'modernizr-script', get_template_directory_uri() . '/assets/js/dist/modernizr-2.6.2.min.js', array(), '2.6.2', false );
-    wp_enqueue_script( 'gumby-script', get_template_directory_uri() . '/assets/js/dist/gumby.min.js', array(), '2.6.3', true );
+    wp_enqueue_script( 'gumby-script', get_template_directory_uri() . '/assets/js/dist/gumby.min.js', array(), '2.6.4', true );
     //wp_enqueue_script( 'vendor-script', get_template_directory_uri() . '/assets/js/dist/vendor.min.js', array(), '', true );
     wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/js/dist/all.min.js', array(), '', true );
 }
