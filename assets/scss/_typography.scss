@@ -6,14 +6,14 @@
 }
 
 .typography-light {
-    color: $font-color;
+    color: $body-font-color;
 
     a {
-        color: $link-color;
+        color: $body-link-color;
     }
 
     a:hover {
-        color: $link-hover-color;
+        color: $body-link-hover-color;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -22,18 +22,18 @@
 }
 
 .typography-dark {
-    color: $font-color-alt;
+    color: $body-font-color-dark;
 
     a {
-        color: $link-color-alt;
+        color: $body-link-color-dark;
     }
 
     a:hover {
-        color: $link-hover-color-alt;
+        color: $body-link-hover-color-dark;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        color: $header-font-color-alt;
+        color: $header-font-color-dark;
     }
 }
 
