@@ -1,6 +1,6 @@
 {
-  "name": "gumby-wordpress-theme",
-  "version": "1.2.0",
+  "name": "RDMGumbyShell",
+  "version": "1.2.1",
   "description": "A blank theme for WordPress based on the Gumby Framework with Gulp.",
   "main": "index.php",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Toddses/gumby-wordpress-theme.git"
+    "url": "git@github.com:RainyDayMedia/RDMGumbyShell.git"
   },
   "author": "Todd Miller <todd@rainydaymedia.net>",
   "license": "GPL2",
   "bugs": {
-    "url": "https://github.com/Toddses/gumby-wordpress-theme/issues"
+    "url": "https://github.com/RainyDayMedia/RDMGumbyShell/issues"
   },
-  "homepage": "https://github.com/Toddses/gumby-wordpress-theme",
+  "homepage": "https://github.com/RainyDayMedia/RDMGumbyShell",
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "gulp": "^3.8.10",

@@ -1,7 +1,7 @@
 {
-  "name": "gumby-wordpress-theme",
-  "version": "1.0.0",
-  "homepage": "https://github.com/Toddses/gumby-wordpress-theme",
+  "name": "RDMGumbyShell",
+  "version": "1.2.1",
+  "homepage": "https://github.com/RainyDayMedia/RDMGumbyShell",
   "authors": [
     "Todd Miller <todd@rainydaymedia.net>"
   ],
