@@ -141,7 +141,7 @@ include_once( get_template_directory() . '/inc/ricg-responsive-images/wp-tevko-r
  */
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts', 99 );
 function theme_enqueue_scripts() {
-	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.min.css' );
+    wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.min.css' );
     //wp_enqueue_style( 'vendor-style', get_template_directory_uri() . '/vendor.min.css' );
 
     wp_enqueue_script( 'jquery' );
@@ -170,6 +170,9 @@ function theme_enqueue_scripts() {
 	// Add support for including <p> tags in the excerpts
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'rdmgumby_trim_excerpt' );
+
+    // add support for responsive background images from the media library
+    //add_action( 'wp_footer', 'rdmgumby_output_responsive_backgrounds', 99 );
 
     // Sets up the theme color
     // this is used as the ms tile background color and the chrome toolbar color

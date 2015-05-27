@@ -181,3 +181,65 @@ function rdmgumby_show_featured_image( $id = null, $add_link = false )
 
     echo $output;
 }
+
+/**
+ * Outputs the responsive background javascript code. jQuery is required!
+ */
+function rdmgumby_output_responsive_backgrounds()
+{
+    global $bg_queue;
+
+    if ( empty( $bg_queue ) )
+        return false;
+
+?>
+    <script type="text/javascript">
+        var responsiveBG = ( function ($) {
+
+            function insert (id, images) {
+                var $el   = $(id),
+                    width = window.innerWidth,
+                    image;
+
+                if (width >= 960)
+                    image = images[0];
+                else if (width >= 768)
+                    image = images[1];
+                else
+                    image = images[2];
+
+                $el.css('background-image', 'url(' + image + ')');
+            }
+
+            return {
+                insert: insert
+            };
+        })(jQuery);
+
+<?php
+    foreach ( $bg_queue as $bg ) {
+        $selector = $bg['selector'];
+        $img_id   = $bg['id'];
+
+        $full    = wp_get_attachment_image_src( $img_id, 'full' );
+        $large   = wp_get_attachment_image_src( $img_id, 'large' );
+        $medium  = wp_get_attachment_image_src( $img_id, 'medium' );
+        $images = '["'.$full[0].'", "'.$large[0].'", "'.$medium[0].'"]';
+
+        echo 'responsiveBG.insert("'.$selector.'", '.$images.'); ';
+    }
+
+    echo '</script>';
+}
+
+/**
+ * Adds an image to the responsive background queue.
+ *
+ * @param string $selector The HTML selector to target (recommend using id attribute)
+ * @param int $image_id The ID of the image in the WordPress media library
+ */
+function rdmgumby_enqueue_responsive_background( $selector, $image_id )
+{
+    global $bg_queue;
+    $bg_queue[] = [ 'selector' => $selector, 'id' => $image_id ];
+}
