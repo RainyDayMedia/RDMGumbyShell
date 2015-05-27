@@ -60,12 +60,13 @@ We've also built a number of library functions you can use.
 * **rdmgumby_admin_menu_separator( $position )** adds a separator at the given position.
 * **__the_field( $key, $method, $post_id )** escapes ACF field output, using the given method. ($method and $post_id are optional and default to esc_html and the current post, respectively)
 * **__the_sub_field( $key, $method, $post_id)** escapes ACF sub field output, using the given method. ($method and $post_id are optional and default to esc_html and the current post, respectively)
+* * **rdmgumby_output_favicons()** outputs the html for the favicons generated with http://realfavicongenerator.net/
+* **rdmgumby_show_featured_image( $id, $add_link )** outputs a post's featured image, or the fallback image if there isn't one. set $add_link to true to include a link to the full sized image ($id and $add_link are optional and default to the current post and false, respectively)
 
 The following are enabled and disabled via the `functions.php` file. Comment or Uncomment the actions or filters as needed.
 
 * **rdmgumby_add_alt_tags()** automatically adds alt tags to images in content, unless they already have one
 * **rdmgumby_trim_excerpt()** an excerpt trimmer that doesn't strip out the &lt;p&gt; tags
-* **rdmgumby_output_favicons()** outputs the html for the favicons generated with http://realfavicongenerator.net/
 
 ## The Gulpfile
 

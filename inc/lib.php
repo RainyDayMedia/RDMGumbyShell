@@ -144,3 +144,40 @@ function __the_sub_field( $key, $method = 'esc_html', $post_id = false )
 
     echo ( $method === NULL ) ? $field : $method( $field );
 }
+
+/**
+ * Outputs the current post's featured image. If there isn't one set on the post,
+ * output the fallback image.
+ * Drop a fallback image in theme/assets/img/blog-fallback.png.
+ *
+ * @param int $id ID of the post to retrieve (default current Post ID)
+ * @param bool $add_link Set to true to add a link to the full sized image (default false)
+ */
+function rdmgumby_show_featured_image( $id = null, $add_link = false )
+{
+    global $post;
+    $id     = ( $id === null ) ? $post->ID : $id;
+    $output = '';
+
+    if ( has_post_thumbnail( $id ) ) {
+        if ( $add_link ) {
+            $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' );
+
+            $output .= '<a href="'. $url[0] .'" alt="Lock 27 Brewing">';
+            $output .= get_the_post_thumbnail( $id, 'medium' );
+            $output .= '</a>';
+
+        } else {
+            $output .= get_the_post_thumbnail( $id, 'medium' );
+        }
+
+    } else {
+        $output .= '<img src="';
+        $output .= get_template_directory_uri();
+        $output .= '/assets/img/blog-fallback.png" alt="';
+        $output .= get_bloginfo( 'name' );
+        $output .= '" class="wp-post-image" />';
+    }
+
+    echo $output;
+}
