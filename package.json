@@ -1,6 +1,6 @@
 {
   "name": "RDMGumbyShell",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "A blank theme for WordPress based on the Gumby Framework with Gulp.",
   "main": "index.php",
   "scripts": {
