@@ -243,3 +243,35 @@ function rdmgumby_enqueue_responsive_background( $selector, $image_id )
     global $bg_queue;
     $bg_queue[] = [ 'selector' => $selector, 'id' => $image_id ];
 }
+
+/**
+ * Outputs the social icons and links. Style as necessary using the
+ * social-link class, and .social-link i
+ *
+ * In order for this to work, you must have an Advanced Custom Fields option
+ * page that includes a repeater field, 'social', with sub fields 'type' and 'url'
+ * The 'type' sub field is used to determine which icon to display.
+ *
+ * @param string $icon_modifier (optional) The icon modifier.
+ * Ex. 'circled' would be a valid modifier that would output the circled
+ * versions of the icons.
+ */
+function rdmgumby_output_social_links( $icon_modifier = null )
+{
+    while ( have_rows( 'social', 'options' ) ) :
+        the_row();
+
+        $icon = 'icon-' . esc_html( strtolower( get_sub_field( 'type' ) ) );
+        if ( $icon_modifier !== null )
+            $icon .= '-' . $icon_modifier;
+?>
+
+            <div class="social-link">
+                <a href="<?php __the_sub_field( 'url', 'esc_url' ); ?>">
+                    <i class="<?php echo $icon; ?>"></i>
+                </a>
+            </div>
+
+<?php
+    endwhile;
+}
