@@ -129,6 +129,17 @@ function rdmgumby_widgets_init()
 include_once( get_template_directory() . '/inc/ricg-responsive-images/wp-tevko-responsive-images.php' );
 
 /**
+ * Include the web-admin-role plugin. This creates a Web Admin user role when the theme
+ * is activated, and removes it when deactivated. We use the Web Admin role to
+ * slightly limit what the client admins can do in the backend. Usually this will
+ * prevent them from updating plugins or core code, inserting crazy html on the site,
+ * and willy-nilly activating, deactivating, or deleting things like themes.
+ *
+ * Comment this line out to disable the feature.
+ */
+include_once( get_template_directory() . '/inc/web-admin-role/web-admin-role.php' );
+
+/**
  * Enqueue scripts and styles
  *
  * Note that we enqueue minified versions of all of these files. If you are not
