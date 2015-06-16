@@ -94,7 +94,7 @@ function rdmgumby_deactivate_web_admin_role()
  * Removes the Administrator role if the user is not an admin.
  *
  * @param array $all_roles The WordPress roles array
- * @return array The filtered roles array.
+ * @return array The updated roles array.
  */
 function rdmgumby_filter_editable_roles( $all_roles )
 {
