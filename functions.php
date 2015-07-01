@@ -121,12 +121,23 @@ function rdmgumby_widgets_init()
 	*/
 
 /**
- * RICG Responsive Images plugin v2.0.2
+ * RICG Responsive Images plugin v2.1.1
  * It seems like this will change in the future to become part of the WordPress core,
  * at which point this will be redundant.
  * You can take this out by commenting out the include.
  */
 include_once( get_template_directory() . '/inc/ricg-responsive-images/wp-tevko-responsive-images.php' );
+
+/**
+ * Include the web-admin-role plugin. This creates a Web Admin user role when the theme
+ * is activated, and removes it when deactivated. We use the Web Admin role to
+ * slightly limit what the client admins can do in the backend. Usually this will
+ * prevent them from updating plugins or core code, inserting crazy html on the site,
+ * and willy-nilly activating, deactivating, or deleting things like themes.
+ *
+ * Comment this line out to disable the feature.
+ */
+include_once( get_template_directory() . '/inc/web-admin-role/web-admin-role.php' );
 
 /**
  * Enqueue scripts and styles
@@ -141,11 +152,12 @@ include_once( get_template_directory() . '/inc/ricg-responsive-images/wp-tevko-r
  */
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts', 99 );
 function theme_enqueue_scripts() {
-	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.min.css' );
+    wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.min.css' );
     //wp_enqueue_style( 'vendor-style', get_template_directory_uri() . '/vendor.min.css' );
 
+    wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'modernizr-script', get_template_directory_uri() . '/assets/js/dist/modernizr-2.6.2.min.js', array(), '2.6.2', false );
-    wp_enqueue_script( 'gumby-script', get_template_directory_uri() . '/assets/js/dist/gumby.min.js', array(), '2.6.3', true );
+    wp_enqueue_script( 'gumby-script', get_template_directory_uri() . '/assets/js/dist/gumby.min.js', array(), '2.6.4', true );
     //wp_enqueue_script( 'vendor-script', get_template_directory_uri() . '/assets/js/dist/vendor.min.js', array(), '', true );
     wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/js/dist/all.min.js', array(), '', true );
 }
@@ -169,3 +181,18 @@ function theme_enqueue_scripts() {
 	// Add support for including <p> tags in the excerpts
 	remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 	add_filter( 'get_the_excerpt', 'rdmgumby_trim_excerpt' );
+
+    // add support for responsive background images from the media library
+    //add_action( 'wp_footer', 'rdmgumby_output_responsive_backgrounds', 99 );
+
+    // Sets up the theme color
+    // this is used as the ms tile background color and the chrome toolbar color
+    global $favicon_theme_color;
+    $favicon_theme_color = '#ffffff';
+    // Adds generated favicons to theme from end and backend
+    // http://realfavicongenerator.net/
+    add_action( 'wp_head', 'rdmgumby_output_favicons' );
+    add_action( 'admin_head', 'rdmgumby_output_favicons' );
+    add_action( 'login_head', 'rdmgumby_output_favicons' );
+
+

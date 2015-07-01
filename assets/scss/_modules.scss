@@ -1,2 +1,68 @@
 /* =Modules
 ----------------------------------------------- */
+/* === GENERAL PURPOSE === */
+.separator {
+    text-align: center;
+
+    > hr {
+        margin: em($norm) auto em($large) auto;
+        width: em($large);
+        height: 2px;
+
+        &.long {
+            width: 40%;
+
+            @include respond(all-phones) {
+                width: 50%;
+            }
+
+            @include respond("max-width: 500px") {
+                width: 80%;
+            }
+
+            @include respond(portrait-phones) {
+                width: 100%;
+            }
+        }
+
+        &.full {
+            width: 100%;
+        }
+
+        &.no-margin {
+            margin: 0;
+        }
+    }
+}
+
+span.left,
+li.left {
+    float: left;
+}
+
+span.right,
+li.right {
+    float: right;
+}
+
+.overlay,
+.black-overlay,
+.white-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.black-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.white-overlay {
+    background-color: rgba(242, 242, 242, 0.85);
+}
+
+.content-none {
+    @include respond(all-phones) {
+        margin-bottom: em($xxlarge);
+    }
+}

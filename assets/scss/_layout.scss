@@ -1,2 +1,57 @@
 /* =Layout
 ----------------------------------------------- */
+// fixes the WordPress admin bar on mobile widths
+body {
+    @include respond("max-width: 782px") {
+        position: static;
+    }
+}
+
+// makes the footer a sticky footer
+.site {
+    min-height: 100%;
+    position: relative;
+}
+
+// turn the section/article/aside tags into a sidebar with content
+section {
+    @include row();
+}
+
+article {
+    @include hybrid(11, false, false);
+}
+
+aside {
+    @include hybrid(4, false, false);
+    @include push(1, 'hybrid');
+
+    // creates some space below the sidebar on mobile widths
+    @include respond(all-phones) {
+        margin-bottom: em($larger);
+    }
+}
+
+.l-v-margin {
+    margin-top: em($norm);
+
+    &.largest {
+        margin-top: em($reallybig);
+    }
+
+    &.larger {
+        margin-top: em($xxxlarge);
+    }
+
+    &.large {
+        margin-top: em($large);
+    }
+
+    &.medium {
+        margin-top: em($med);
+    }
+
+    &.short {
+        margin-top: em($small);
+    }
+}

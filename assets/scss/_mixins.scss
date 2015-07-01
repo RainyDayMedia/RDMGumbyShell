@@ -1,0 +1,16 @@
+/* =Mixins
+----------------------------------------------- */
+// right now, gumby's valign class is broken, so we have our own placeholder
+// vertical alignment
+%vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// full width/height background
+%full-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

@@ -8,15 +8,15 @@
  */
 ?>
 
-	</div><!-- #content -->
+	</div><!-- #content .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'rdmgumby' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'rdmgumby' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'rdmgumby' ), 'rdmgumby', '<a href="http://rainydaymedia.net" rel="designer-developer">Rainy Day Media LLC.</a>' ); ?>
+
+
+
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</footer><!-- #colophon .site-footer -->
 
 </div><!-- #page -->
 

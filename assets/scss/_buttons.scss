@@ -1,0 +1,39 @@
+/* =Buttons
+----------------------------------------------- */
+.btn {
+    > a {
+        white-space: nowrap;
+
+        @include respond(all-phones) {
+
+        }
+    }
+
+    @include respond(all-phones) {
+        width: 100%;
+    }
+}
+
+.no-touch .btn {
+    transition: $base-transition;
+
+    > a {
+        transition: $base-transition;
+    }
+}
+
+// just an example for reference
+.btn.primary {
+    background: none;
+    border: 3px solid $black;
+    color: $black;
+}
+
+.btn.primary:hover,
+.btn.primary:active {
+    background: $black;
+
+    > a {
+        color: $white;
+    }
+}
