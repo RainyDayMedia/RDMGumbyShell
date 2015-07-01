@@ -36,12 +36,6 @@ DEVELOPERS:
 DESIGNERS:
   Ed Heltzel    @ginfuru
 
-COPYWRITERS:
-  Maria Norman  facebook.com/maria.norman.777
-
-SPECIAL MENTIONS:
-  Jesse Masin   facebook.com/jesse.masin
-
 TECHNOLOGY COLOPHON:
   Wordpress, HTML5, CSS3, Gumby, JavaScript,
     Gulp, Bower, SASS, jQuery, Normalize, Modernizr
