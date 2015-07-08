@@ -176,7 +176,7 @@ function theme_enqueue_scripts() {
 	//require get_template_directory() . '/inc/jetpack.php';
 
 	// Load Dashboard Overrides - for white labling
-	require get_tamplate_directory() . '/inc/dashboard.php';
+	require get_template_directory() . '/inc/dashboard.php';
 
 	// Add support for automatic creation of alt tags for images in the content
 	add_filter( 'the_content', 'rdmgumby_add_alt_tags', 9999 );
